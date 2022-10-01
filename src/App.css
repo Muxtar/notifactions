@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #f9fafe;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+div.main {
+  background-color: white;
+  width: 50%;
+  margin: 100px auto;
+  box-shadow: 0 0 5px 0 rgb(200, 200, 200);
+  border-radius: 5px;
+  padding: 15px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+div.main div.head {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+div.main div.head div {
+  flex-basis: 50%;
+}
+div.main div.head div.left {
+  text-align: left;
+}
+div.main div.head div.left span.number {
+  font-size: 15px;
+  background-color: #093279;
   color: white;
+  padding: 3px 5px;
+  border-radius: 5px;
 }
-
-.App-link {
-  color: #61dafb;
+div.main div.head div.right {
+  text-align: right;
+  color: #093279;
+  cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.main div.body {
+  margin: 10px 0;
 }
+div.main div.body div.notifications div.notification {
+  display: flex;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+div.main div.body div.notifications div.notification div.left {
+  flex-basis: 10%;
+}
+div.main div.body div.notifications div.notification div.left img {
+  width: 50px;
+  height: 50px;
+}
+div.main div.body div.notifications div.notification div.right {
+  flex-basis: 90%;
+}
+div.main div.body div.notifications div.notification div.right p {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #86898f;
+}
+div.main div.body div.notifications div.notification div.right p * {
+  padding-right: 20px;
+  color: #86898f;
+}
+div.main div.body div.notifications div.notification div.right p span.username, div.main div.body div.notifications div.notification div.right p span.note {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+}
+div.main div.body div.notifications div.notification div.right p span.username:hover, div.main div.body div.notifications div.notification div.right p span.note:hover {
+  color: #093279;
+  cursor: pointer;
+}
+div.main div.body div.notifications div.notification div.right p span.point {
+  display: inline-block;
+  padding: 0;
+  background-color: tomato;
+  width: 5px !important;
+  height: 5px;
+  border-radius: 50%;
+}
+div.main div.body div.notifications div.notification div.right .message {
+  border: 1px solid rgb(200, 200, 200);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+div.main div.body div.notifications div.notification:hover {
+  border: 1px solid rgb(220, 220, 220);
+}
+div.main div.body div.notifications .read {
+  background-color: #f6fafd;
+  box-shadow: 0 0 2px 0 rgb(200, 200, 200);
+}
+div.main div.body div.notifications .not-read {
+  background-color: transparent;
+}/*# sourceMappingURL=App.css.map */

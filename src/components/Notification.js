@@ -3,20 +3,28 @@ import { useState } from "react";
 function Message(props){
     return(
         <div className="message">
-            {props.message}
+            {props.messages}
         </div>
     )
 }
 
 function Notification({value}){
     let [show, setShow] = useState(false);
-    function showMessage(){
+
+    function Xml(param){
+        let api = new XMLHttpRequest();
+        api.onload = ()=>{}
+        api.send(`userId:${param}`) 
+    }
+    function showMessage(e){
         setShow(!show)
+        value.readable = false;
+        Xml('')
     }
     return(
         <div className={`notification ${value.readable ? 'read' : 'not-read'}`} onClick={showMessage}>
             <div className="left">
-                <img src={require(`../../notifications-page-main/assets/images/${value.image}`)} alt="" />
+                <img src={value.image} alt="" />
             </div>
             <div className="right">
                 <p className="about">
@@ -27,7 +35,7 @@ function Notification({value}){
                 </p>
                 <p className="date-main">{value.date}</p>
                 {show ?
-                    value.message ? <Message message = {value.message}/> : null
+                    value.messages ? <Message messages = {value.messages}/> : null
                 : null }
             </div>
         </div>

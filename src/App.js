@@ -1,51 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import Notifications from './components/Notifications';
+import { useContext } from 'react';
+import { Context } from './components/Context';
 
 function App() {
-  let notifications = [
-    {
-        id: 1,
-        username: 'Rufet Nuriyev',
-        image: 'avatar-angela-gray.webp',
-        move: 'followed you',
-        note: 'Chess club',
-        date: '5m ago',
-        readable: false,
-        message: '  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil voluptates necessitatibus accusantium numquam, assumenda aliquid consectetur. Eaque porro sunt vero, ad tempora excepturi eligendi quo quae aut nobis minima? Debitis'
-    },
-    {
-        id: 2,
-        username: 'Muxtar Bayramov',
-        image: 'avatar-jacob-thompson.webp',
-        move: 'followed you',
-        note: 'Chess club',
-        date: '5m ago',
-        readable: true,
-        // message: '  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil voluptates necessitatibus accusantium numquam, assumenda aliquid consectetur. Eaque porro sunt vero, ad tempora excepturi eligendi quo quae aut nobis minima? Debitis'
-    },
-    {
-        id: 3,
-        username: 'Aysel Quliyeva',
-        image: 'avatar-nathan-peterson.webp',
-        move: 'followed you',
-        note: 'Chess club',
-        date: '5m ago',
-        readable: true,
-        message: '  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil voluptates necessitatibus accusantium numquam, assumenda aliquid consectetur. Eaque porro sunt vero, ad tempora excepturi eligendi quo quae aut nobis minima? Debitis'
-    },
-    {
-      id: 4,
-      username: 'Aysel Quliyeva',
-      image: 'avatar-nathan-peterson.webp',
-      move: 'followed you',
-      note: 'Chess club',
-      date: '5m ago',
-      readable: true,
-      message: '  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil voluptates necessitatibus accusantium numquam, assumenda aliquid consectetur. Eaque porro sunt vero, ad tempora excepturi eligendi quo quae aut nobis minima? Debitis'
-  }
-
-]
+  let notifications = useContext(Context);
   return (
    <div className='main'>
       <h1></h1>

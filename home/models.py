@@ -20,6 +20,9 @@ class Messages(models.Model):
     username = models.ForeignKey(User, related_name = 'message', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='messages') 
     readable = models.BooleanField()
+    move = models.CharField(max_length = 30, blank = True, null = True)
+    note = models.CharField(max_length = 30, blank = True, null = True)
+    date = models.DateTimeField(auto_now = True)
     messages = models.TextField()
 
     def __str__(self) -> str:

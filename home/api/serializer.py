@@ -9,4 +9,4 @@ class MessagesSerial(serializers.ModelSerializer):
     username = serializers.CharField(source = 'username.username')
     class Meta:
         model = Messages
-        fields = ('username', 'image', 'readable', 'messages')
+        fields = ('id', 'username', 'image', 'readable', 'messages', 'move', 'note', 'date')

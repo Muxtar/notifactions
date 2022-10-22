@@ -8,18 +8,24 @@ function Message(props){
     )
 }
 
-function Notification({value}){
+function Notification({value, id}){
     let [show, setShow] = useState(false);
 
-    function Xml(param){
-        let api = new XMLHttpRequest();
-        api.onload = ()=>{}
-        api.send(`userId:${param}`) 
+    function xml(){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            console.log(this.responseText)
+        }
+        xhttp.open("PATCH", `http://127.0.0.1:8000/api/${id}/`);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(null)
     }
+
     function showMessage(e){
-        setShow(!show)
+        setShow(!show);
         value.readable = false;
-        Xml('')
+        console.log('showmessages run')
+        xml();
     }
     return(
         <div className={`notification ${value.readable ? 'read' : 'not-read'}`} onClick={showMessage}>
